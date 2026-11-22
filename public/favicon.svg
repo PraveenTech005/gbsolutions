@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <rect width="48" height="48" rx="6" fill="#0F172A"/>
+  <!-- Steel Truss / I-Beam geometry -->
+  <path d="M10 12H38V16H26V32H38V36H10V32H22V16H10V12Z" fill="#F8FAFC"/>
+  <!-- Industrial Accent Chevron -->
+  <path d="M30 16L38 24L30 32" stroke="#EA580C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
