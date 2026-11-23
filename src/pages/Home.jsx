@@ -118,20 +118,21 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-6 relative">
-              <div className="relative border border-slate-200 bg-slate-900 overflow-hidden rounded-xs">
+              <div className="relative border border-slate-200 bg-slate-900 overflow-hidden rounded-xs shadow-md">
                 <img
                   src="/images/og/shed_inner1.png"
                   alt="Pre-Engineered Building Structure"
                   className="w-full aspect-[4/3] object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <p className="text-xs font-mono uppercase text-orange-400">G.B SOLUTION PEB</p>
-                  <p className="text-sm font-semibold">Pre-Engineered Building System - Large Clear-Span Structure</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+                <div className="absolute bottom-0 inset-x-0 p-5 text-white z-10">
+                  <p className="text-xs font-mono uppercase text-orange-400 font-bold tracking-wider">G.B SOLUTION PEB</p>
+                  <p className="text-sm sm:text-base font-bold text-white mt-0.5 leading-snug">Pre-Engineered Building System - Large Clear-Span Structure</p>
                 </div>
               </div>
 
-              <div className="absolute -bottom-6 -right-4 sm:-bottom-8 sm:right-6 bg-slate-900 text-white p-5 rounded-xs border border-slate-700 shadow-xl max-w-[260px]">
+              {/* 15+ Years Promoter Experience Badge - Positioned at top corner to prevent overlapping the bottom caption */}
+              <div className="absolute -top-6 -left-3 sm:-top-8 sm:left-6 bg-slate-900/95 backdrop-blur-xs text-white p-5 rounded-xs border border-slate-700 shadow-xl max-w-[260px] z-20">
                 <div className="text-2xl font-black text-orange-500 font-sans">15+ Years</div>
                 <div className="text-xs font-semibold text-slate-200 uppercase tracking-wider mt-1">
                   Promoter Industry Leadership

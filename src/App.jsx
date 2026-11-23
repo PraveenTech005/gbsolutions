@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import ScrollToTop from './components/common/ScrollToTop';
+import FloatingQuoteButton from './components/common/FloatingQuoteButton';
 
 // Pages
 import Home from './pages/Home';
@@ -57,6 +58,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
+        <FloatingQuoteButton />
       </div>
     </Router>
   );

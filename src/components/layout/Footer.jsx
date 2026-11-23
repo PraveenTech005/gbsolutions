@@ -64,7 +64,7 @@ export default function Footer() {
             </div>
 
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
-              Industrial Shed and Civil Contractors delivering turnkey pre-engineered buildings, pre-fabricated structural steel solutions, and civil construction services.
+              Shinex Solutions delivering turnkey pre-engineered buildings, pre-fabricated structural steel solutions, and civil construction services.
             </p>
 
             <div className="pt-2 text-xs text-slate-400 space-y-1">
@@ -173,7 +173,7 @@ export default function Footer() {
       <div className="border-t border-slate-900 bg-black/40 py-6 px-4 sm:px-6 lg:px-8 text-xs text-slate-500">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>
-            © {currentYear} {companyInfo.name}. All Rights Reserved. Industrial Shed & Civil Contractors.
+            © {currentYear} {companyInfo.name}. All Rights Reserved. Shinex Solutions.
           </p>
           <p className="text-[11px] text-slate-500">
             Engineered Pre-Fabricated Structural Building Solutions • Hyderabad, India
