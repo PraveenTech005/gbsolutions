@@ -80,7 +80,7 @@ export default function Contact() {
     const serviceName = selectedServiceObj ? selectedServiceObj.title : formData.service;
     const subject = encodeURIComponent(`Project Inquiry: ${serviceName} - ${formData.fullName || 'New Client'}`);
     const body = encodeURIComponent(
-      `Dear G.B SOLUTION PEB Engineering Team,\n\n` +
+      `Dear G.B SOLUTIONS PEB Engineering Team,\n\n` +
       `I would like to discuss an industrial engineering project:\n\n` +
       `Name: ${formData.fullName}\n` +
       `Phone: ${formData.phone}\n` +
@@ -97,7 +97,7 @@ export default function Contact() {
     const selectedServiceObj = servicesData.find(s => s.slug === formData.service);
     const serviceName = selectedServiceObj ? selectedServiceObj.title : formData.service;
     const text = encodeURIComponent(
-      `Hello G.B SOLUTION PEB,\nI am interested in ${serviceName}.\n` +
+      `Hello G.B SOLUTIONS PEB,\nI am interested in ${serviceName}.\n` +
       `Name: ${formData.fullName || 'Client'}\n` +
       `Location: ${formData.projectLocation || 'Hyderabad'}\n` +
       `Note: ${formData.message || 'I would like to discuss a project.'}`
@@ -109,7 +109,7 @@ export default function Contact() {
     <>
       <SEO
         title="Contact Us | Project Inquiries & Quotations"
-        description="Contact G.B SOLUTION PEB at IDA Nacharam, Hyderabad. Call +91 95055 52025 or email gbsolutions4@gmail.com for industrial shed and civil contracting quotations."
+        description="Contact G.B SOLUTIONS PEB at IDA Nacharam, Hyderabad. Call +91 95055 52025 or email gbsolutions4@gmail.com for industrial shed and civil contracting quotations."
       />
 
       {/* PageHero strictly using /images/og/shed_inner0.png */}
@@ -275,7 +275,7 @@ export default function Contact() {
                       <div>
                         <strong className="font-bold">Portfolio Demonstration Notice:</strong>
                         <p className="mt-0.5 text-amber-800 leading-relaxed">
-                          This is a frontend-only corporate portfolio demo (no backend database connected). To transmit your entered inquiry directly to G.B SOLUTION PEB, please use one of the direct action buttons below:
+                          This is a frontend-only corporate portfolio demo (no backend database connected). To transmit your entered inquiry directly to G.B SOLUTIONS PEB, please use one of the direct action buttons below:
                         </p>
                       </div>
                     </div>
@@ -491,7 +491,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white border border-slate-200 rounded-xs overflow-hidden">
             <div className="lg:col-span-8 h-80 sm:h-96 w-full bg-slate-200 relative">
               <iframe
-                title="G.B SOLUTION PEB Location - IDA Nacharam Hyderabad"
+                title="G.B SOLUTIONS PEB Location - IDA Nacharam Hyderabad"
                 src="https://maps.google.com/maps?q=Below+TSIIC+Complex+Road+No+1+IDA+Nacharam+Hyderabad+500076&t=&z=14&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"

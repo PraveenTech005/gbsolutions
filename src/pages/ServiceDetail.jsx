@@ -42,7 +42,7 @@ export default function ServiceDetail() {
     <>
       <SEO
         title={`${service.title} | Services`}
-        description={`${service.title} by G.B SOLUTION PEB. ${service.overview}`}
+        description={`${service.title} by G.B SOLUTIONS PEB. ${service.overview}`}
       />
 
       <PageHero
@@ -54,7 +54,7 @@ export default function ServiceDetail() {
           { label: service.shortTitle }
         ]}
         image={service.image}
-        badgeText="G.B SOLUTION PEB • Engineering Delivery"
+        badgeText="G.B SOLUTIONS PEB • Engineering Delivery"
       />
 
       {/* Main Service Content */}

@@ -20,7 +20,7 @@ function NotFound() {
         Page Not Found
       </h1>
       <p className="text-slate-600 mt-3 text-sm max-w-md">
-        The requested URL was not found on the G.B SOLUTION PEB corporate portal. Please check the address or return to the homepage.
+        The requested URL was not found on the G.B SOLUTIONS PEB corporate portal. Please check the address or return to the homepage.
       </p>
       <div className="mt-8 flex items-center gap-4">
         <Link

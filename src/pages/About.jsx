@@ -31,11 +31,11 @@ export default function About() {
     <>
       <SEO
         title="About Us | Corporate Profile & Project Report"
-        description="Detailed corporate profile of G.B SOLUTION PEB. Promoter Mr. G. Satish, 15+ years experience, plant & machinery inventory, and industrial shed project proposal."
+        description="Detailed corporate profile of G.B SOLUTIONS PEB. Promoter Mr. G. Satish, 15+ years experience, plant & machinery inventory, and industrial shed project proposal."
       />
 
       <PageHero
-        title="About G.B SOLUTION PEB"
+        title="About G.B SOLUTIONS PEB"
         eyebrow="Corporate Profile"
         subtitle="Industrial Shed and Civil Contractors delivering turnkey pre-engineered buildings, structural steel fabrication, and integrated civil construction solutions."
         breadcrumbs={[{ label: "About Us" }]}
@@ -51,7 +51,7 @@ export default function About() {
               <SectionHeading
                 eyebrow="Company Information"
                 title="Brief About The Promoters, Management and Organisation"
-                description="M/s G.B SOLUTION is an established proprietorship enterprise incorporated in 2017, operating under experienced structural engineering leadership."
+                description="M/s G.B SOLUTIONS is an established proprietorship enterprise incorporated in 2017, operating under experienced structural engineering leadership."
               />
 
               <div className="mt-8 border border-slate-200 rounded-xs overflow-hidden shadow-xs">
@@ -92,11 +92,11 @@ export default function About() {
               <div className="border border-slate-200 bg-slate-900 rounded-xs overflow-hidden shadow-sm">
                 <img
                   src="/images/og/shed_gate.png"
-                  alt="G.B SOLUTION PEB Facility Structure"
+                  alt="G.B SOLUTIONS PEB Facility Structure"
                   className="w-full aspect-[4/5] object-cover object-center filter brightness-95"
                 />
                 <div className="p-4 bg-slate-900 text-white text-xs">
-                  <p className="font-bold text-orange-400">G.B SOLUTION PEB</p>
+                  <p className="font-bold text-orange-400">G.B SOLUTIONS PEB</p>
                   <p className="text-slate-400 mt-0.5">Industrial Shed & Civil Construction Facility</p>
                 </div>
               </div>
@@ -195,7 +195,7 @@ export default function About() {
             <SectionHeading
               eyebrow="Equipment Fleet"
               title="Details of Plant Machinery, Furniture & Equipment"
-              description="Complete inventory of heavy construction equipment and plant machinery supporting G.B SOLUTION PEB operations."
+              description="Complete inventory of heavy construction equipment and plant machinery supporting G.B SOLUTIONS PEB operations."
               className="mb-0"
             />
 

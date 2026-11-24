@@ -85,7 +85,7 @@ export default function ImageLightbox({
       >
         <img
           src={imgSrc}
-          alt={imgTitle || "G.B SOLUTION Project Photo"}
+          alt={imgTitle || "G.B SOLUTIONS Project Photo"}
           className="max-h-[75vh] max-w-full object-contain rounded-sm border border-slate-700 shadow-2xl"
         />
 

@@ -1,7 +1,15 @@
-import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, ArrowRight, ShieldCheck, Clock, ExternalLink } from 'lucide-react';
-import { companyInfo } from '../../data/company';
-import { servicesData } from '../../data/services';
+import { Link } from "react-router-dom";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  ArrowRight,
+  ShieldCheck,
+  Clock,
+  ExternalLink,
+} from "lucide-react";
+import { companyInfo } from "../../data/company";
+import { servicesData } from "../../data/services";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -20,7 +28,8 @@ export default function Footer() {
                 Industrial Engineering Precision & Turnkey Delivery
               </p>
               <p className="text-slate-400 text-xs mt-0.5">
-                From sub-grade concrete foundations to pre-engineered steel superstructures since 2017.
+                From sub-grade concrete foundations to pre-engineered steel
+                superstructures since 2017.
               </p>
             </div>
           </div>
@@ -51,59 +60,93 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
           {/* Column 1: Brand & Overview (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 bg-slate-800 border border-slate-700 flex items-center justify-center rounded-xs">
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-                  <path d="M4 4H20V7H13.5V17H20V20H4V17H10.5V7H4V4Z" fill="#F8FAFC" />
-                  <path d="M15 10L18 12L15 14" stroke="#EA580C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+            <div className="flex flex-col items-center gap-2.5">
+              <div className="w-40 h-40 bg-slate-800 border border-slate-700 flex items-center justify-center rounded-xs">
+                <img src="/icon.png" />
               </div>
               <span className="text-xl font-black tracking-tight text-white uppercase">
-                G.B SOLUTION <span className="text-orange-500">PEB</span>
+                G.B SOLUTIONS <span className="text-orange-500">PEB</span>
               </span>
             </div>
 
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
-              Shinex Solutions delivering turnkey pre-engineered buildings, pre-fabricated structural steel solutions, and civil construction services.
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed text-center">
+              G.B. Solutions delivering turnkey pre-engineered buildings,
+              pre-fabricated structural steel solutions, and civil construction
+              services.
             </p>
 
-            <div className="pt-2 text-xs text-slate-400 space-y-1">
-              <p><span className="text-slate-200 font-semibold">Promoter:</span> {companyInfo.promoter.name}</p>
-              <p><span className="text-slate-200 font-semibold">Industry Experience:</span> {companyInfo.promoter.experience}</p>
-              <p><span className="text-slate-200 font-semibold">Date of Incorporation:</span> {companyInfo.dateOfIncorporation}</p>
+            <div className="pt-2 text-xs text-slate-400 space-y-1 text-center">
+              <p>
+                <span className="text-slate-200 font-semibold">Promoter:</span>{" "}
+                {companyInfo.promoter.name}
+              </p>
+              <p>
+                <span className="text-slate-200 font-semibold">
+                  Industry Experience:
+                </span>{" "}
+                {companyInfo.promoter.experience}
+              </p>
+              <p>
+                <span className="text-slate-200 font-semibold">
+                  Date of Incorporation:
+                </span>{" "}
+                {companyInfo.dateOfIncorporation}
+              </p>
             </div>
           </div>
 
           {/* Column 2: Quick Links (2 cols) */}
-          <div className="lg:col-span-2 space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-white border-l-2 border-orange-500 pl-2">
+          <div className="lg:col-span-2 space-y-3 flex flex-col justify-center items-center">
+            <h4 className="font-bold uppercase tracking-widest text-white text-lg">
               Navigation
             </h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2 text-sm flex flex-col justify-center items-center">
               <li>
-                <Link to="/" className="hover:text-white transition-colors">Home</Link>
+                <Link to="/" className="hover:text-white transition-colors">
+                  Home
+                </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-white transition-colors">About Us</Link>
+                <Link
+                  to="/about"
+                  className="hover:text-white transition-colors"
+                >
+                  About Us
+                </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-white transition-colors">Engineering Services</Link>
+                <Link
+                  to="/services"
+                  className="hover:text-white transition-colors"
+                >
+                  Engineering Services
+                </Link>
               </li>
               <li>
-                <Link to="/industries" className="hover:text-white transition-colors">Industries & Drivers</Link>
+                <Link
+                  to="/industries"
+                  className="hover:text-white transition-colors"
+                >
+                  Industries & Drivers
+                </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-white transition-colors">Contact & Enquiries</Link>
+                <Link
+                  to="/contact"
+                  className="hover:text-white transition-colors"
+                >
+                  Contact & Enquiries
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Column 3: Core Engineering Services (3 cols) */}
-          <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-white border-l-2 border-orange-500 pl-2">
+          <div className="lg:col-span-2 space-y-3 flex flex-col justify-center items-center">
+            <h4 className="font-bold uppercase tracking-widest text-white text-lg">
               Core Services
             </h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2 text-xs flex flex-col justify-center items-center">
               {servicesData.slice(0, 6).map((service) => (
                 <li key={service.id}>
                   <Link
@@ -127,12 +170,12 @@ export default function Footer() {
           </div>
 
           {/* Column 4: Registered Office & Contacts (3 cols) */}
-          <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-white border-l-2 border-orange-500 pl-2">
+          <div className="lg:col-span-3 space-y-3 flex flex-col justify-center items-center">
+            <h4 className="text-lg font-bold uppercase tracking-widest text-white">
               Registered Office
             </h4>
-            
-            <div className="space-y-2.5 text-xs text-slate-400">
+
+            <div className="space-y-2.5 text-xs text-slate-400 flex flex-col justify-center items-center">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-orange-500 shrink-0 mt-0.5" />
                 <p className="leading-relaxed">
@@ -142,7 +185,7 @@ export default function Footer() {
 
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-orange-500 shrink-0" />
-                <a 
+                <a
                   href={`tel:${companyInfo.contact.phoneRaw}`}
                   className="hover:text-white font-mono text-slate-300"
                 >
@@ -152,7 +195,7 @@ export default function Footer() {
 
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-orange-500 shrink-0" />
-                <a 
+                <a
                   href={`mailto:${companyInfo.contact.email}`}
                   className="hover:text-white text-slate-300 truncate"
                 >
@@ -173,10 +216,12 @@ export default function Footer() {
       <div className="border-t border-slate-900 bg-black/40 py-6 px-4 sm:px-6 lg:px-8 text-xs text-slate-500">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>
-            © {currentYear} {companyInfo.name}. All Rights Reserved. Shinex Solutions.
+            © {currentYear} {companyInfo.name}. All Rights Reserved.{" "}
+            <span className="text-orange-400">Shine CoreX Technologies.</span>
           </p>
           <p className="text-[11px] text-slate-500">
-            Engineered Pre-Fabricated Structural Building Solutions • Hyderabad, India
+            Engineered Pre-Fabricated Structural Building Solutions • Hyderabad,
+            India
           </p>
         </div>
       </div>

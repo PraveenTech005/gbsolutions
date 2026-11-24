@@ -1,34 +1,41 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, ChevronRight, Layers, ShieldCheck } from 'lucide-react';
-import SEO from '../components/common/SEO';
-import PageHero from '../components/common/PageHero';
-import SectionHeading from '../components/common/SectionHeading';
-import ServiceCard from '../components/common/ServiceCard';
-import CTASection from '../components/common/CTASection';
-import { servicesData } from '../data/services';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  CheckCircle2,
+  ChevronRight,
+  Layers,
+  ShieldCheck,
+} from "lucide-react";
+import SEO from "../components/common/SEO";
+import PageHero from "../components/common/PageHero";
+import SectionHeading from "../components/common/SectionHeading";
+import ServiceCard from "../components/common/ServiceCard";
+import CTASection from "../components/common/CTASection";
+import { servicesData } from "../data/services";
 
 export default function Services() {
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   const categories = [
-    { key: 'all', label: 'All Services' },
-    { key: 'Superstructure Engineering', label: 'Superstructure' },
-    { key: 'Structural Products', label: 'Structural Products' },
-    { key: 'Building Envelope', label: 'Roofing & Envelope' },
-    { key: 'Civil Construction', label: 'Civil Works' },
-    { key: 'Industrial Contracting', label: 'Industrial Sheds' }
+    { key: "all", label: "All Services" },
+    { key: "Superstructure Engineering", label: "Superstructure" },
+    { key: "Structural Products", label: "Structural Products" },
+    { key: "Building Envelope", label: "Roofing & Envelope" },
+    { key: "Civil Construction", label: "Civil Works" },
+    { key: "Industrial Contracting", label: "Industrial Sheds" },
   ];
 
-  const filteredServices = selectedCategory === 'all'
-    ? servicesData
-    : servicesData.filter(s => s.category === selectedCategory);
+  const filteredServices =
+    selectedCategory === "all"
+      ? servicesData
+      : servicesData.filter((s) => s.category === selectedCategory);
 
   return (
     <>
       <SEO
         title="Engineering Services | Pre-Engineered Buildings & Civil Works"
-        description="Comprehensive industrial services by G.B SOLUTION PEB: Pre-Engineered Buildings, Steel Frames, Precast Concrete Panels, Modular Units, Sandwich Panels, and Civil Construction."
+        description="Comprehensive industrial services by G.B SOLUTIONS PEB: Pre-Engineered Buildings, Steel Frames, Precast Concrete Panels, Modular Units, Sandwich Panels, and Civil Construction."
       />
 
       <PageHero
@@ -48,7 +55,7 @@ export default function Services() {
               Filter By Domain:
             </span>
             <div className="flex items-center gap-2">
-              {categories.map(cat => (
+              {categories.map((cat) => (
                 <button
                   key={cat.key}
                   onClick={() => setSelectedCategory(cat.key)}
@@ -73,7 +80,7 @@ export default function Services() {
       <section className="py-20 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredServices.map(service => (
+            {filteredServices.map((service) => (
               <ServiceCard key={service.id} service={service} />
             ))}
           </div>
@@ -92,34 +99,62 @@ export default function Services() {
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="border border-slate-200 p-6 rounded-xs bg-slate-50 relative">
-              <span className="text-3xl font-black text-orange-500 font-sans">01</span>
-              <h4 className="text-base font-bold text-slate-900 mt-2">Design & Anchor Detailing</h4>
+              <div className="flex">
+                <span className="text-3xl font-mono font-bold text-orange-600">
+                  &#8226;
+                </span>
+                <h4 className="text-base font-bold text-slate-900 mt-2">
+                  Design & Anchor Detailing
+                </h4>
+              </div>
               <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                Quick design turnaround on critical items such as anchor bolt drawings and building reactions.
+                Quick design turnaround on critical items such as anchor bolt
+                drawings and building reactions.
               </p>
             </div>
 
             <div className="border border-slate-200 p-6 rounded-xs bg-slate-50 relative">
-              <span className="text-3xl font-black text-orange-500 font-sans">02</span>
-              <h4 className="text-base font-bold text-slate-900 mt-2">Factory Steel Fabrication</h4>
+              <div className="flex">
+                <span className="text-3xl font-mono font-bold text-orange-600">
+                  &#8226;
+                </span>
+                <h4 className="text-base font-bold text-slate-900 mt-2">
+                  Factory Steel Fabrication
+                </h4>
+              </div>
               <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                Components manufactured in a controlled environment using advanced machinery for high quality control.
+                Components manufactured in a controlled environment using
+                advanced machinery for high quality control.
               </p>
             </div>
 
             <div className="border border-slate-200 p-6 rounded-xs bg-slate-50 relative">
-              <span className="text-3xl font-black text-orange-500 font-sans">03</span>
-              <h4 className="text-base font-bold text-slate-900 mt-2">Concrete & Civil Works</h4>
+              <div className="flex">
+                <span className="text-3xl font-mono font-bold text-orange-600">
+                  &#8226;
+                </span>
+                <h4 className="text-base font-bold text-slate-900 mt-2">
+                  Concrete & Civil Works
+                </h4>
+              </div>
               <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                Undertakes all kinds of concrete constructions: concrete foundations, concrete columns, and brick masonry flooring.
+                Undertakes all kinds of concrete constructions: concrete
+                foundations, concrete columns, and brick masonry flooring.
               </p>
             </div>
 
             <div className="border border-slate-200 p-6 rounded-xs bg-slate-50 relative">
-              <span className="text-3xl font-black text-orange-500 font-sans">04</span>
-              <h4 className="text-base font-bold text-slate-900 mt-2">Sequenced On-Site Erection</h4>
+              <div className="flex">
+                <span className="text-3xl font-mono font-bold text-orange-600">
+                  &#8226;
+                </span>
+                <h4 className="text-base font-bold text-slate-900 mt-2">
+                  Sequenced On-Site Erection
+                </h4>
+              </div>
               <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                On-time delivery of the steel, coordinated and sequenced the way you plan on performing the erection process.
+                On-time delivery of the steel, coordinated and sequenced the way
+                you plan on performing the erection process.
               </p>
             </div>
           </div>
