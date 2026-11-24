@@ -40,7 +40,7 @@ export default function Navbar() {
 
             {/* Logo / Wordmark */}
             <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group">
-              <div className="w-20 h-20 sm:w-10 sm:h-10 bg-slate-800 border border-slate-700 flex items-center justify-center rounded-xs group-hover:border-orange-500 transition-colors duration-200 shrink-0">
+              <div className="w-30 h-30 sm:w-10 sm:h-10 flex items-center justify-center rounded-xs group-hover:border-orange-500 transition-colors duration-200 shrink-0">
                 <img src="/icon.png" />
               </div>
               <div className="flex flex-col">
