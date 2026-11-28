@@ -7,6 +7,7 @@ import FloatingQuoteButton from './components/common/FloatingQuoteButton';
 // Pages
 import Home from './pages/Home';
 import About from './pages/About';
+import Products from './pages/Products';
 import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
 import Industries from './pages/Industries';
@@ -14,7 +15,7 @@ import Contact from './pages/Contact';
 
 function NotFound() {
   return (
-    <div className="min-h-[70vh] flex flex-col items-center justify-center text-center px-4 py-20 bg-slate-50">
+    <div className="min-h-[70vh] flex flex-col items-center justify-center text-center px-4 py-20 bg-white">
       <div className="text-5xl font-black text-orange-600 font-sans">404</div>
       <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">
         Page Not Found
@@ -31,7 +32,7 @@ function NotFound() {
         </Link>
         <Link
           to="/services"
-          className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-wider rounded-xs transition-colors"
+          className="px-6 py-3 bg-white hover:bg-slate-100 text-slate-900 border border-slate-300 font-bold text-xs uppercase tracking-wider rounded-xs transition-colors"
         >
           View Services
         </Link>
@@ -44,12 +45,13 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 font-sans selection:bg-orange-600 selection:text-white">
+      <div className="min-h-screen flex flex-col bg-white text-slate-900 font-sans selection:bg-orange-600 selection:text-white">
         <Navbar />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/products" element={<Products />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />
             <Route path="/industries" element={<Industries />} />

@@ -49,15 +49,15 @@ export default function Industries() {
       {/* Market Overview Context Banner */}
       <section className="bg-white border-b border-slate-200 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8 bg-slate-900 text-white rounded-xs border border-slate-800">
+          <div className="p-8 bg-white text-slate-900 rounded-xs border border-slate-200 shadow-xs">
             <div className="max-w-3xl">
-              <span className="text-xs font-mono uppercase text-orange-400 font-bold">
+              <span className="text-xs font-mono uppercase text-orange-600 font-bold">
                 Industry Trajectory
               </span>
-              <h2 className="text-xl sm:text-2xl font-extrabold text-white mt-1">
+              <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 mt-1">
                 India's Pre-Fabricated & Engineered Building Structural Industry
               </h2>
-              <p className="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
                 The Pre-Engineered Buildings (PEB) market in India has been
                 growing steadily, with increasing demand for cost-effective and
                 time-efficient construction solutions. The Prefabricated
@@ -68,28 +68,28 @@ export default function Industries() {
               </p>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-slate-800 grid grid-cols-2 md:grid-cols-4 gap-6 text-xs">
+            <div className="mt-8 pt-6 border-t border-slate-200 grid grid-cols-2 md:grid-cols-4 gap-6 text-xs">
               <div>
-                <p className="text-slate-400">Prefabricated Market (2025)</p>
-                <p className="text-lg font-bold text-white mt-0.5">
+                <p className="text-slate-500">Prefabricated Market (2025)</p>
+                <p className="text-lg font-bold text-slate-900 mt-0.5">
                   USD 15.07 Billion
                 </p>
               </div>
               <div>
-                <p className="text-slate-400">Projected Market (2030)</p>
-                <p className="text-lg font-bold text-orange-400 mt-0.5">
+                <p className="text-slate-500">Projected Market (2030)</p>
+                <p className="text-lg font-bold text-orange-600 mt-0.5">
                   USD 23.13 Billion
                 </p>
               </div>
               <div>
-                <p className="text-slate-400">Prefab Market Growth</p>
-                <p className="text-lg font-bold text-white mt-0.5">
+                <p className="text-slate-500">Prefab Market Growth</p>
+                <p className="text-lg font-bold text-slate-900 mt-0.5">
                   8.95% CAGR
                 </p>
               </div>
               <div>
-                <p className="text-slate-400">PEB Industry by 2032</p>
-                <p className="text-lg font-bold text-orange-400 mt-0.5">
+                <p className="text-slate-500">PEB Industry by 2032</p>
+                <p className="text-lg font-bold text-orange-600 mt-0.5">
                   USD 0.888 Billion
                 </p>
               </div>
@@ -115,7 +115,7 @@ export default function Industries() {
                 >
                   {/* Image Column */}
                   <div
-                    className={`lg:col-span-6 relative bg-slate-900 overflow-hidden ${isEven ? "lg:order-2" : ""}`}
+                    className={`lg:col-span-6 relative bg-slate-100 overflow-hidden ${isEven ? "lg:order-2" : ""}`}
                   >
                     <img
                       src={ind.image}
@@ -123,10 +123,10 @@ export default function Industries() {
                       className="w-full h-full min-h-[300px] lg:min-h-[420px] object-cover object-center filter brightness-95"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
                     <div className="absolute bottom-4 left-4 right-4 text-white">
-                      <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-slate-900/90 text-orange-400 text-[10px] font-mono uppercase tracking-widest rounded-xs border border-slate-700">
+                      <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-white/95 text-orange-600 text-[10px] font-mono uppercase tracking-widest rounded-xs border border-slate-200 shadow-xs">
                         {ind.subtitle}
                       </div>
                     </div>

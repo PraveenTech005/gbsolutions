@@ -1,31 +1,31 @@
-import { useState } from 'react';
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Clock, 
-  Send, 
-  CheckCircle2, 
-  ExternalLink, 
+import { useState } from "react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Send,
+  CheckCircle2,
+  ExternalLink,
   AlertCircle,
   FileCheck,
   Building,
-  HelpCircle
-} from 'lucide-react';
-import SEO from '../components/common/SEO';
-import PageHero from '../components/common/PageHero';
-import SectionHeading from '../components/common/SectionHeading';
-import { companyInfo } from '../data/company';
-import { servicesData } from '../data/services';
+  HelpCircle,
+} from "lucide-react";
+import SEO from "../components/common/SEO";
+import PageHero from "../components/common/PageHero";
+import SectionHeading from "../components/common/SectionHeading";
+import { companyInfo } from "../data/company";
+import { servicesData } from "../data/services";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    service: 'pre-engineered-buildings',
-    projectLocation: '',
-    message: ''
+    fullName: "",
+    email: "",
+    phone: "",
+    service: "pre-engineered-buildings",
+    projectLocation: "",
+    message: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -35,31 +35,32 @@ export default function Contact() {
   const validate = () => {
     const errs = {};
     if (!formData.fullName.trim()) {
-      errs.fullName = 'Full Name is required';
+      errs.fullName = "Full Name is required";
     }
     if (!formData.email.trim()) {
-      errs.email = 'Email address is required';
+      errs.email = "Email address is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
-      errs.email = 'Please enter a valid email address';
+      errs.email = "Please enter a valid email address";
     }
     if (!formData.phone.trim()) {
-      errs.phone = 'Phone number is required';
+      errs.phone = "Phone number is required";
     } else if (!/^[0-9+\s-]{8,15}$/.test(formData.phone.trim())) {
-      errs.phone = 'Please enter a valid contact number (8-15 digits)';
+      errs.phone = "Please enter a valid contact number (8-15 digits)";
     }
     if (!formData.message.trim()) {
-      errs.message = 'Please provide a brief description of your project requirements';
+      errs.message =
+        "Please provide a brief description of your project requirements";
     } else if (formData.message.trim().length < 10) {
-      errs.message = 'Description must be at least 10 characters long';
+      errs.message = "Description must be at least 10 characters long";
     }
     return errs;
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: null }));
+      setErrors((prev) => ({ ...prev, [name]: null }));
     }
   };
 
@@ -76,33 +77,43 @@ export default function Contact() {
   };
 
   const getMailtoLink = () => {
-    const selectedServiceObj = servicesData.find(s => s.slug === formData.service);
-    const serviceName = selectedServiceObj ? selectedServiceObj.title : formData.service;
-    const subject = encodeURIComponent(`Project Inquiry: ${serviceName} - ${formData.fullName || 'New Client'}`);
+    const selectedServiceObj = servicesData.find(
+      (s) => s.slug === formData.service,
+    );
+    const serviceName = selectedServiceObj
+      ? selectedServiceObj.title
+      : formData.service;
+    const subject = encodeURIComponent(
+      `Project Inquiry: ${serviceName} - ${formData.fullName || "New Client"}`,
+    );
     const body = encodeURIComponent(
       `Dear G.B SOLUTIONS PEB Engineering Team,\n\n` +
-      `I would like to discuss an industrial engineering project:\n\n` +
-      `Name: ${formData.fullName}\n` +
-      `Phone: ${formData.phone}\n` +
-      `Email: ${formData.email}\n` +
-      `Service: ${serviceName}\n` +
-      `Project Location: ${formData.projectLocation || 'To be specified'}\n\n` +
-      `Requirements:\n${formData.message}\n\n` +
-      `Best regards,\n${formData.fullName}`
+        `I would like to discuss an industrial engineering project:\n\n` +
+        `Name: ${formData.fullName}\n` +
+        `Phone: ${formData.phone}\n` +
+        `Email: ${formData.email}\n` +
+        `Service: ${serviceName}\n` +
+        `Project Location: ${formData.projectLocation || "To be specified"}\n\n` +
+        `Requirements:\n${formData.message}\n\n` +
+        `Best regards,\n${formData.fullName}`,
     );
     return `mailto:${companyInfo.contact.email}?subject=${subject}&body=${body}`;
   };
 
   const getWhatsAppLink = () => {
-    const selectedServiceObj = servicesData.find(s => s.slug === formData.service);
-    const serviceName = selectedServiceObj ? selectedServiceObj.title : formData.service;
+    const selectedServiceObj = servicesData.find(
+      (s) => s.slug === formData.service,
+    );
+    const serviceName = selectedServiceObj
+      ? selectedServiceObj.title
+      : formData.service;
     const text = encodeURIComponent(
       `Hello G.B SOLUTIONS PEB,\nI am interested in ${serviceName}.\n` +
-      `Name: ${formData.fullName || 'Client'}\n` +
-      `Location: ${formData.projectLocation || 'Hyderabad'}\n` +
-      `Note: ${formData.message || 'I would like to discuss a project.'}`
+        `Name: ${formData.fullName || "Client"}\n` +
+        `Location: ${formData.projectLocation || "Hyderabad"}\n` +
+        `Note: ${formData.message || "I would like to discuss a project."}`,
     );
-    return `https://wa.me/919505552025?text=${text}`;
+    return `https://wa.me/919505552033?text=${text}`;
   };
 
   return (
@@ -126,7 +137,6 @@ export default function Contact() {
       <section className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-            
             {/* Left Column: Direct Contact Info (5 cols) */}
             <div className="lg:col-span-5 space-y-8">
               <div>
@@ -139,7 +149,9 @@ export default function Contact() {
                 <div className="mt-4 h-0.5 w-16 bg-orange-600"></div>
 
                 <p className="mt-4 text-slate-600 text-sm leading-relaxed">
-                  Whether you are planning an industrial shed, warehouse expansion, precast panels, or turnkey civil foundations, our team is ready to assist.
+                  Whether you are planning an industrial shed, warehouse
+                  expansion, precast panels, or turnkey civil foundations, our
+                  team is ready to assist.
                 </p>
               </div>
 
@@ -151,8 +163,12 @@ export default function Contact() {
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-mono font-bold uppercase text-slate-400">Office Location</h4>
-                    <p className="text-sm font-bold text-slate-900 mt-1">{companyInfo.name}</p>
+                    <h4 className="text-xs font-mono font-bold uppercase text-slate-400">
+                      Office Location
+                    </h4>
+                    <p className="text-sm font-bold text-slate-900 mt-1">
+                      {companyInfo.name}
+                    </p>
                     <p className="text-xs text-slate-600 mt-1 leading-relaxed">
                       {companyInfo.contact.address.full}
                     </p>
@@ -165,9 +181,11 @@ export default function Contact() {
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-mono font-bold uppercase text-slate-400">Direct Phone / Mobile</h4>
+                    <h4 className="text-xs font-mono font-bold uppercase text-slate-400">
+                      Direct Phone / Mobile
+                    </h4>
                     <p className="text-sm font-bold text-slate-900 mt-1">
-                      <a 
+                      <a
                         href={`tel:${companyInfo.contact.phoneRaw}`}
                         className="text-orange-600 hover:text-orange-700 font-mono"
                       >
@@ -175,7 +193,8 @@ export default function Contact() {
                       </a>
                     </p>
                     <p className="text-xs text-slate-500 mt-1">
-                      Promoter: {companyInfo.promoter.name} ({companyInfo.promoter.phone})
+                      Promoter: {companyInfo.promoter.name} (
+                      {companyInfo.promoter.phone})
                     </p>
                   </div>
                 </div>
@@ -186,9 +205,11 @@ export default function Contact() {
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-mono font-bold uppercase text-slate-400">Electronic Mail</h4>
+                    <h4 className="text-xs font-mono font-bold uppercase text-slate-400">
+                      Electronic Mail
+                    </h4>
                     <p className="text-sm font-bold text-slate-900 mt-1">
-                      <a 
+                      <a
                         href={`mailto:${companyInfo.contact.email}`}
                         className="text-orange-600 hover:text-orange-700 underline truncate block font-mono"
                       >
@@ -207,7 +228,9 @@ export default function Contact() {
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-mono font-bold uppercase text-slate-400">Working Hours</h4>
+                    <h4 className="text-xs font-mono font-bold uppercase text-slate-400">
+                      Working Hours
+                    </h4>
                     <p className="text-sm font-bold text-slate-900 mt-1">
                       {companyInfo.contact.workingHours}
                     </p>
@@ -216,16 +239,20 @@ export default function Contact() {
               </div>
 
               {/* Instant Channels */}
-              <div className="p-5 bg-slate-900 text-white rounded-xs border border-slate-800">
-                <p className="text-xs font-mono uppercase text-orange-400 font-bold">Direct Channels</p>
-                <p className="text-sm text-slate-200 mt-1">Connect instantly via WhatsApp or direct phone call</p>
-                
+              <div className="p-5 bg-white text-slate-900 rounded-xs border border-slate-200 shadow-xs">
+                <p className="text-xs font-mono uppercase text-orange-600 font-bold">
+                  Direct Channels
+                </p>
+                <p className="text-sm text-slate-600 mt-1">
+                  Connect instantly via WhatsApp or direct phone call
+                </p>
+
                 <div className="mt-4 flex flex-col sm:flex-row gap-3">
                   <a
                     href={companyInfo.contact.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider rounded-xs transition-colors"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider rounded-xs transition-colors shadow-xs"
                   >
                     <span>WhatsApp Inquiry</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -233,9 +260,9 @@ export default function Contact() {
 
                   <a
                     href={`tel:${companyInfo.contact.phoneRaw}`}
-                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-bold uppercase tracking-wider rounded-xs transition-colors"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 text-xs font-bold uppercase tracking-wider rounded-xs transition-colors shadow-xs"
                   >
-                    <Phone className="w-3.5 h-3.5 text-orange-400" />
+                    <Phone className="w-3.5 h-3.5 text-orange-600" />
                     <span>Call Directly</span>
                   </a>
                 </div>
@@ -250,7 +277,9 @@ export default function Contact() {
                     Project Quotation & Technical Inquiry
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
-                    Please provide your building requirements. This interactive form validates your input and provides instant mailto / WhatsApp forwarding actions.
+                    Please provide your building requirements. This interactive
+                    form validates your input and provides instant mailto /
+                    WhatsApp forwarding actions.
                   </p>
                 </div>
 
@@ -264,7 +293,11 @@ export default function Contact() {
                             Inquiry Prepared Successfully!
                           </h4>
                           <p className="text-xs text-emerald-700 mt-1 leading-relaxed">
-                            Thank you, <strong className="font-semibold">{submittedData.fullName}</strong>. Your project details have been validated.
+                            Thank you,{" "}
+                            <strong className="font-semibold">
+                              {submittedData.fullName}
+                            </strong>
+                            . Your project details have been validated.
                           </p>
                         </div>
                       </div>
@@ -273,18 +306,45 @@ export default function Contact() {
                     <div className="p-4 bg-amber-50 border border-amber-200 rounded-xs text-xs text-amber-900 flex items-start gap-3">
                       <AlertCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
                       <div>
-                        <strong className="font-bold">Portfolio Demonstration Notice:</strong>
+                        <strong className="font-bold">
+                          Portfolio Demonstration Notice:
+                        </strong>
                         <p className="mt-0.5 text-amber-800 leading-relaxed">
-                          This is a frontend-only corporate portfolio demo (no backend database connected). To transmit your entered inquiry directly to G.B SOLUTIONS PEB, please use one of the direct action buttons below:
+                          This is a frontend-only corporate portfolio demo (no
+                          backend database connected). To transmit your entered
+                          inquiry directly to G.B SOLUTIONS PEB, please use one
+                          of the direct action buttons below:
                         </p>
                       </div>
                     </div>
 
                     <div className="p-4 bg-slate-50 border border-slate-200 rounded-xs text-xs space-y-2">
-                      <p><strong className="text-slate-800">Interested Service:</strong> {servicesData.find(s => s.slug === submittedData.service)?.title || submittedData.service}</p>
-                      <p><strong className="text-slate-800">Client Contact:</strong> {submittedData.phone} | {submittedData.email}</p>
-                      {submittedData.projectLocation && <p><strong className="text-slate-800">Location:</strong> {submittedData.projectLocation}</p>}
-                      <p><strong className="text-slate-800">Requirements:</strong> {submittedData.message}</p>
+                      <p>
+                        <strong className="text-slate-800">
+                          Interested Service:
+                        </strong>{" "}
+                        {servicesData.find(
+                          (s) => s.slug === submittedData.service,
+                        )?.title || submittedData.service}
+                      </p>
+                      <p>
+                        <strong className="text-slate-800">
+                          Client Contact:
+                        </strong>{" "}
+                        {submittedData.phone} | {submittedData.email}
+                      </p>
+                      {submittedData.projectLocation && (
+                        <p>
+                          <strong className="text-slate-800">Location:</strong>{" "}
+                          {submittedData.projectLocation}
+                        </p>
+                      )}
+                      <p>
+                        <strong className="text-slate-800">
+                          Requirements:
+                        </strong>{" "}
+                        {submittedData.message}
+                      </p>
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-3 pt-2">
@@ -316,9 +376,16 @@ export default function Contact() {
                     </div>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} noValidate className="space-y-5">
+                  <form
+                    onSubmit={handleSubmit}
+                    noValidate
+                    className="space-y-5"
+                  >
                     <div>
-                      <label htmlFor="fullName" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                      <label
+                        htmlFor="fullName"
+                        className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5"
+                      >
                         Full Name <span className="text-orange-600">*</span>
                       </label>
                       <input
@@ -344,8 +411,12 @@ export default function Contact() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
-                        <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                          Email Address <span className="text-orange-600">*</span>
+                        <label
+                          htmlFor="email"
+                          className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5"
+                        >
+                          Email Address{" "}
+                          <span className="text-orange-600">*</span>
                         </label>
                         <input
                           type="email"
@@ -369,8 +440,12 @@ export default function Contact() {
                       </div>
 
                       <div>
-                        <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                          Phone Number <span className="text-orange-600">*</span>
+                        <label
+                          htmlFor="phone"
+                          className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5"
+                        >
+                          Phone Number{" "}
+                          <span className="text-orange-600">*</span>
                         </label>
                         <input
                           type="tel"
@@ -396,7 +471,10 @@ export default function Contact() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
-                        <label htmlFor="service" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                        <label
+                          htmlFor="service"
+                          className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5"
+                        >
                           Service Interested In
                         </label>
                         <select
@@ -406,7 +484,7 @@ export default function Contact() {
                           onChange={handleChange}
                           className="w-full px-4 py-3 text-sm bg-slate-50 border border-slate-300 rounded-xs focus:bg-white focus:outline-none focus:ring-1 focus:border-orange-600 focus:ring-orange-600"
                         >
-                          {servicesData.map(s => (
+                          {servicesData.map((s) => (
                             <option key={s.id} value={s.slug}>
                               {s.title}
                             </option>
@@ -415,7 +493,10 @@ export default function Contact() {
                       </div>
 
                       <div>
-                        <label htmlFor="projectLocation" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                        <label
+                          htmlFor="projectLocation"
+                          className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5"
+                        >
                           Project Site Location / Area
                         </label>
                         <input
@@ -431,8 +512,12 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                        Project Description / Scope <span className="text-orange-600">*</span>
+                      <label
+                        htmlFor="message"
+                        className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5"
+                      >
+                        Project Description / Scope{" "}
+                        <span className="text-orange-600">*</span>
                       </label>
                       <textarea
                         id="message"
@@ -466,7 +551,8 @@ export default function Contact() {
                     </div>
 
                     <p className="text-[11px] text-slate-400">
-                      * Required fields. All specifications treated with client confidentiality.
+                      * Required fields. All specifications treated with client
+                      confidentiality.
                     </p>
                   </form>
                 )}
@@ -492,7 +578,7 @@ export default function Contact() {
             <div className="lg:col-span-8 h-80 sm:h-96 w-full bg-slate-200 relative">
               <iframe
                 title="G.B SOLUTIONS PEB Location - IDA Nacharam Hyderabad"
-                src="https://maps.google.com/maps?q=Below+TSIIC+Complex+Road+No+1+IDA+Nacharam+Hyderabad+500076&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=Survey+No+327+%26+328,+Sukanya+Farma,+Shamshabad,+Hyderabad+-+501218&t=&z=14&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -508,15 +594,28 @@ export default function Contact() {
                 Registered Office
               </h4>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Located below the TSIIC Complex on Road No. 1 in IDA Nacharam, providing direct proximity to Hyderabad's major industrial fabrication corridors and transport freight networks.
+                Located near the Sukanya Farms in Shamshabad, providing direct
+                proximity to Hyderabad's major industrial fabrication corridors
+                and transport freight networks.
               </p>
 
               <div className="pt-4 border-t border-slate-200 text-xs text-slate-600 space-y-2">
-                <p><strong>Address:</strong> Below TSIIC Complex, Road No. 1</p>
-                <p><strong>Industrial Area:</strong> IDA Nacharam</p>
-                <p><strong>City / Pin:</strong> Hyderabad - 500076, Telangana</p>
-                <p><strong>Phone:</strong> {companyInfo.contact.phone}</p>
-                <p><strong>Email:</strong> {companyInfo.contact.email}</p>
+                <p>
+                  <strong>Address:</strong> Survey No. 327 & 328, Near Sukanya
+                  Farms
+                </p>
+                <p>
+                  <strong>Industrial Area:</strong> Narkoda Village, Shamshabad
+                </p>
+                <p>
+                  <strong>City / Pin:</strong> Hyderabad - 501218, Telangana
+                </p>
+                <p>
+                  <strong>Phone:</strong> {companyInfo.contact.phone}
+                </p>
+                <p>
+                  <strong>Email:</strong> {companyInfo.contact.email}
+                </p>
               </div>
 
               <div className="pt-2">

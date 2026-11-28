@@ -1,30 +1,33 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { 
-  Building2, 
-  ShieldCheck, 
-  CheckCircle2, 
-  MapPin, 
-  Award, 
-  Clock, 
-  Wrench, 
-  Layers, 
-  Phone, 
-  Mail, 
-  FileText, 
-  Cpu
-} from 'lucide-react';
-import SEO from '../components/common/SEO';
-import PageHero from '../components/common/PageHero';
-import SectionHeading from '../components/common/SectionHeading';
-import CTASection from '../components/common/CTASection';
-import { companyInfo } from '../data/company';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  Building2,
+  ShieldCheck,
+  CheckCircle2,
+  MapPin,
+  Award,
+  Clock,
+  Wrench,
+  Layers,
+  Phone,
+  Mail,
+  FileText,
+  Cpu,
+  Quote,
+} from "lucide-react";
+import SEO from "../components/common/SEO";
+import PageHero from "../components/common/PageHero";
+import SectionHeading from "../components/common/SectionHeading";
+import CTASection from "../components/common/CTASection";
+import { companyInfo } from "../data/company";
 
 export default function About() {
-  const [equipmentFilter, setEquipmentFilter] = useState('');
+  const [equipmentFilter, setEquipmentFilter] = useState("");
 
   const filteredEquipment = equipmentFilter
-    ? companyInfo.equipmentList.filter(e => e.name.toLowerCase().includes(equipmentFilter.toLowerCase()))
+    ? companyInfo.equipmentList.filter((e) =>
+        e.name.toLowerCase().includes(equipmentFilter.toLowerCase()),
+      )
     : companyInfo.equipmentList;
 
   return (
@@ -43,8 +46,89 @@ export default function About() {
         badgeText="Incorporated 01-07-2017 • Hyderabad, Telangana"
       />
 
+      {/* Founder & CEO's Message Section - Fully Mobile Responsive */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* CEO Message Column */}
+            <div className="lg:col-span-7 flex flex-col justify-center">
+              <div className="bg-slate-50 border-2 border-orange-400/80 rounded-sm p-6 sm:p-8 lg:p-10 shadow-xs relative">
+                {/* Decorative Quote Icon watermark */}
+                <div className="absolute top-4 right-4 text-orange-600/15 pointer-events-none">
+                  <Quote className="w-12 h-12 sm:w-16 sm:h-16" />
+                </div>
+
+                <div className="inline-flex items-center gap-2 mb-3 text-xs font-bold tracking-widest text-orange-600 uppercase">
+                  <Award className="w-4 h-4 text-orange-600" />
+                  <span>Leadership Perspective</span>
+                </div>
+
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                  CEO's Message
+                </h2>
+
+                <div className="mt-4 sm:mt-5 text-slate-700 text-sm sm:text-base leading-relaxed space-y-4">
+                  <p className="text-left leading-relaxed">
+                    "{companyInfo.owner.message}"
+                  </p>
+                  {companyInfo.owner.quote && (
+                    <p className="text-orange-600 font-semibold italic text-base sm:text-lg pt-1">
+                      "{companyInfo.owner.quote.replace(/\*/g, "")}"
+                    </p>
+                  )}
+                </div>
+
+                <div className="mt-6 pt-5 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div>
+                    <h3 className="text-base sm:text-lg font-bold text-slate-900">
+                      - {companyInfo.owner.name}
+                    </h3>
+                    <p className="text-xs font-medium text-slate-500">
+                      {companyInfo.owner.role}, G.B SOLUTIONS PEB
+                    </p>
+                  </div>
+
+                  <span className="inline-flex items-center px-3 py-1 bg-orange-100 text-orange-700 text-xs font-semibold rounded-xs border border-orange-200 self-start sm:self-auto">
+                    15+ Years Industry Experience
+                  </span>
+                </div>
+              </div>
+            </div>
+            {/* CEO Portrait Column */}
+            <div className="lg:col-span-5 flex flex-col items-center text-center">
+              <div className="relative">
+                {/* Decorative background accent ring */}
+                <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-orange-500/25 to-slate-200 -z-10"></div>
+
+                <div className="w-52 h-52 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-white shadow-xl bg-slate-100 ring-2 ring-orange-500/40 relative">
+                  <img
+                    src="/images/CEO.png"
+                    alt={companyInfo.owner.name}
+                    className="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              {/* Name & Role moved below the image */}
+              <div className="mt-4 sm:mt-5 text-center">
+                <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight">
+                  {companyInfo.owner.name}
+                </h3>
+                <p className="text-xs sm:text-sm font-bold text-orange-600 uppercase tracking-wider mt-1">
+                  {companyInfo.owner.role}
+                </p>
+                <p className="text-xs text-slate-500 font-medium mt-0.5">
+                  G.B SOLUTIONS PEB
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 1. Brief About Promoters, Management & Organisation */}
-      <section className="py-20 bg-white border-b border-slate-200">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7">
@@ -54,33 +138,56 @@ export default function About() {
                 description="M/s G.B SOLUTIONS is an established proprietorship enterprise incorporated in 2017, operating under experienced structural engineering leadership."
               />
 
-              <div className="mt-8 border border-slate-200 rounded-xs overflow-hidden shadow-xs">
-                <table className="w-full text-xs text-left">
+              <div className="mt-8 border border-slate-200 rounded-xs overflow-x-auto shadow-xs">
+                <table className="w-full text-xs sm:text-sm text-left min-w-[320px]">
                   <tbody className="divide-y divide-slate-200">
                     <tr className="bg-slate-50">
-                      <td className="px-4 py-3 font-mono font-bold text-slate-500 uppercase w-1/3">Name of the Company</td>
-                      <td className="px-4 py-3 font-bold text-slate-900">{companyInfo.legalName}</td>
+                      <td className="px-3 sm:px-4 py-2.5 sm:py-3 font-mono font-bold text-slate-500 uppercase w-1/3">
+                        Name of the Company
+                      </td>
+                      <td className="px-3 sm:px-4 py-2.5 sm:py-3 font-bold text-slate-900">
+                        {companyInfo.legalName}
+                      </td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-mono font-bold text-slate-500 uppercase">Registered Office</td>
-                      <td className="px-4 py-3 text-slate-700">{companyInfo.contact.address.full}</td>
+                      <td className="px-3 sm:px-4 py-2.5 sm:py-3 font-mono font-bold text-slate-500 uppercase">
+                        Registered Office
+                      </td>
+                      <td className="px-3 sm:px-4 py-2.5 sm:py-3 text-slate-700">
+                        {companyInfo.contact.address.full}
+                      </td>
                     </tr>
                     <tr className="bg-slate-50">
-                      <td className="px-4 py-3 font-mono font-bold text-slate-500 uppercase">Constitution</td>
-                      <td className="px-4 py-3 font-semibold text-slate-900">{companyInfo.constitution}</td>
+                      <td className="px-3 sm:px-4 py-2.5 sm:py-3 font-mono font-bold text-slate-500 uppercase">
+                        Constitution
+                      </td>
+                      <td className="px-3 sm:px-4 py-2.5 sm:py-3 font-semibold text-slate-900">
+                        {companyInfo.constitution}
+                      </td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-mono font-bold text-slate-500 uppercase">Date Of Incorporation</td>
-                      <td className="px-4 py-3 font-mono text-slate-700">{companyInfo.dateOfIncorporation}</td>
+                      <td className="px-3 sm:px-4 py-2.5 sm:py-3 font-mono font-bold text-slate-500 uppercase">
+                        Date Of Incorporation
+                      </td>
+                      <td className="px-3 sm:px-4 py-2.5 sm:py-3 font-mono text-slate-700">
+                        {companyInfo.dateOfIncorporation}
+                      </td>
                     </tr>
                     <tr className="bg-slate-50">
-                      <td className="px-4 py-3 font-mono font-bold text-slate-500 uppercase">Name of the Promoter</td>
-                      <td className="px-4 py-3 font-bold text-orange-600">{companyInfo.promoter.name}</td>
+                      <td className="px-3 sm:px-4 py-2.5 sm:py-3 font-mono font-bold text-slate-500 uppercase">
+                        Name of the Promoter
+                      </td>
+                      <td className="px-3 sm:px-4 py-2.5 sm:py-3 font-bold text-orange-600">
+                        {companyInfo.promoter.name}
+                      </td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-mono font-bold text-slate-500 uppercase">Promoter Contact</td>
-                      <td className="px-4 py-3 font-mono text-slate-700">
-                        Phone: {companyInfo.promoter.phone} | Mail: {companyInfo.promoter.email}
+                      <td className="px-3 sm:px-4 py-2.5 sm:py-3 font-mono font-bold text-slate-500 uppercase">
+                        Promoter Contact
+                      </td>
+                      <td className="px-3 sm:px-4 py-2.5 sm:py-3 font-mono text-slate-700">
+                        Phone: {companyInfo.promoter.phone} | Mail:{" "}
+                        {companyInfo.promoter.email}
                       </td>
                     </tr>
                   </tbody>
@@ -89,15 +196,18 @@ export default function About() {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="border border-slate-200 bg-slate-900 rounded-xs overflow-hidden shadow-sm">
+              <div className="border border-slate-200 bg-slate-100 rounded-xs overflow-hidden shadow-sm">
                 <img
                   src="/images/og/shed_gate.png"
                   alt="G.B SOLUTIONS PEB Facility Structure"
                   className="w-full aspect-[4/5] object-cover object-center filter brightness-95"
+                  loading="lazy"
                 />
-                <div className="p-4 bg-slate-900 text-white text-xs">
-                  <p className="font-bold text-orange-400">G.B SOLUTIONS PEB</p>
-                  <p className="text-slate-400 mt-0.5">Industrial Shed & Civil Construction Facility</p>
+                <div className="p-4 bg-white border-t border-slate-200 text-xs">
+                  <p className="font-bold text-orange-600">G.B SOLUTIONS PEB</p>
+                  <p className="text-slate-600 mt-0.5">
+                    Industrial Shed & Civil Construction Facility
+                  </p>
                 </div>
               </div>
             </div>
@@ -105,43 +215,106 @@ export default function About() {
         </div>
       </section>
 
-      {/* 2. Promoters Background: Mr G Satish */}
-      <section className="py-20 bg-slate-50 border-b border-slate-200">
+      {/* 2. Promoters Background: Mr G Satish - Fully Mobile Responsive */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white border border-slate-200 p-8 sm:p-12 rounded-xs shadow-xs">
+          <div className="bg-white border border-slate-200 p-5 sm:p-8 md:p-12 rounded-xs shadow-xs">
             <div className="inline-flex items-center gap-2 mb-3 text-xs font-bold tracking-widest text-orange-600 uppercase">
               <Award className="w-4 h-4 text-orange-600" />
               <span>Promoter's Background</span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
               Experience That Shapes Every Structure.
             </h2>
 
-            <p className="mt-3 text-orange-600 font-bold text-base">
-              {companyInfo.promoter.name} • {companyInfo.promoter.experience} in Pre-Fabricated & Engineered Building Structural Products
-            </p>
+            <div className="mt-3 flex flex-wrap items-center gap-2 text-sm sm:text-base text-orange-600 font-bold">
+              <span>{companyInfo.promoter.name}</span>
+              <span className="hidden sm:inline text-slate-400">•</span>
+              <span className="px-2.5 py-0.5 bg-orange-100 text-orange-700 text-xs font-semibold rounded-xs border border-orange-200">
+                {companyInfo.promoter.experience}
+              </span>
+              <span className="text-xs sm:text-sm text-slate-600 font-medium">
+                in Pre-Fabricated & Engineered Building Structural Products
+              </span>
+            </div>
 
             <div className="mt-6 text-slate-600 text-sm sm:text-base leading-relaxed space-y-4">
               <p>
-                <strong>Mr G Satish</strong> is a seasoned professional with over 15 years of expertise in the field of pre-fabricated and engineered building structural products. G Satish has a strong technical and business foundation, he has successfully led and contributed to numerous projects that emphasize innovation, efficiency, and sustainability in structural engineering.
+                <strong>Mr G Satish</strong> is a seasoned professional with
+                over 15 years of expertise in the field of pre-fabricated and
+                engineered building structural products. G Satish has a strong
+                technical and business foundation, he has successfully led and
+                contributed to numerous projects that emphasize innovation,
+                efficiency, and sustainability in structural engineering.
               </p>
               <p>
-                Under his leadership, the company has embraced cutting-edge manufacturing techniques and advanced engineering principles to deliver high-quality, cost-effective solutions tailored to diverse construction needs. His strategic vision focuses on fostering industry collaborations, optimizing production efficiency, and ensuring strict adherence to compliance standards.
+                Under his leadership, the company has embraced cutting-edge
+                manufacturing techniques and advanced engineering principles to
+                deliver high-quality, cost-effective solutions tailored to
+                diverse construction needs. His strategic vision focuses on
+                fostering industry collaborations, optimizing production
+                efficiency, and ensuring strict adherence to compliance
+                standards.
               </p>
               <p>
-                With a deep understanding of market dynamics and evolving construction trends, he continues to spearhead advancements that drive growth, enhance operational excellence, and reinforce the company’s reputation as a trusted name in the industry.
+                With a deep understanding of market dynamics and evolving
+                construction trends, he continues to spearhead advancements that
+                drive growth, enhance operational excellence, and reinforce the
+                company’s reputation as a trusted name in the industry.
               </p>
               <p>
-                Through his expertise and commitment to excellence, he remains dedicated to shaping the future of pre-fabricated structural solutions, contributing to the transformation of modern infrastructure development.
+                Through his expertise and commitment to excellence, he remains
+                dedicated to shaping the future of pre-fabricated structural
+                solutions, contributing to the transformation of modern
+                infrastructure development.
               </p>
+            </div>
+
+            {/* Core Competency Badges */}
+            <div className="mt-8 pt-6 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-xs">
+                <CheckCircle2 className="w-5 h-5 text-orange-600 shrink-0" />
+                <div>
+                  <p className="text-xs font-bold text-slate-900">
+                    15+ Years PEB Mastery
+                  </p>
+                  <p className="text-[11px] text-slate-500">
+                    Pre-fabricated & Engineered Systems
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-xs">
+                <CheckCircle2 className="w-5 h-5 text-orange-600 shrink-0" />
+                <div>
+                  <p className="text-xs font-bold text-slate-900">
+                    Advanced Engineering
+                  </p>
+                  <p className="text-[11px] text-slate-500">
+                    Strict Standards & Quality Compliance
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-xs">
+                <CheckCircle2 className="w-5 h-5 text-orange-600 shrink-0" />
+                <div>
+                  <p className="text-xs font-bold text-slate-900">
+                    Turnkey Execution
+                  </p>
+                  <p className="text-[11px] text-slate-500">
+                    From Concept to Commissioning
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* 3. Project and Infrastructure Proposal & Social Impact */}
-      <section className="py-20 bg-white border-b border-slate-200">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Project Proposal"
@@ -150,38 +323,60 @@ export default function About() {
           />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
-            <div className="lg:col-span-7 bg-slate-50 border border-slate-200 p-6 sm:p-8 rounded-xs">
-              <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+            <div className="lg:col-span-7 bg-slate-50 border border-slate-200 p-5 sm:p-8 rounded-xs">
+              <h3 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-orange-600" />
                 <span>Employment & Social Impact</span>
               </h3>
 
               <p className="mt-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
-                The allotment of land under the Scheduled Castes scheme will foster economic empowerment, social inclusion, and sustainable development for marginalized communities. By facilitating the establishment of industries and enterprises, this initiative will create employment opportunities, enhance skill development, and improve livelihoods. Through equitable access to resources, the project aims to reduce socio-economic disparities and promote long-term progress, ensuring a more inclusive and resilient society.
+                The allotment of land under the Scheduled Castes scheme will
+                foster economic empowerment, social inclusion, and sustainable
+                development for marginalized communities. By facilitating the
+                establishment of industries and enterprises, this initiative
+                will create employment opportunities, enhance skill development,
+                and improve livelihoods. Through equitable access to resources,
+                the project aims to reduce socio-economic disparities and
+                promote long-term progress, ensuring a more inclusive and
+                resilient society.
               </p>
 
               <div className="mt-6 space-y-3 pt-6 border-t border-slate-200">
-                {companyInfo.projectProposal.socialImpact.slice(1).map((point, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
-                    <span className="text-xs sm:text-sm text-slate-700">{point}</span>
-                  </div>
-                ))}
+                {companyInfo.projectProposal.socialImpact
+                  .slice(1)
+                  .map((point, idx) => (
+                    <div key={idx} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
+                      <span className="text-xs sm:text-sm text-slate-700">
+                        {point}
+                      </span>
+                    </div>
+                  ))}
               </div>
             </div>
 
-            <div className="lg:col-span-5 bg-slate-900 text-white p-6 sm:p-8 rounded-xs flex flex-col justify-between">
+            <div className="lg:col-span-5 bg-white border border-slate-200 text-slate-900 p-5 sm:p-8 rounded-xs flex flex-col justify-between shadow-xs">
               <div>
-                <span className="text-xs font-mono uppercase text-orange-400 font-bold">Project Overview</span>
-                <h4 className="text-xl font-extrabold text-white mt-1">Proposed Industrial Unit</h4>
-                <p className="mt-3 text-xs text-slate-300 leading-relaxed">
+                <span className="text-xs font-mono uppercase text-orange-600 font-bold">
+                  Project Overview
+                </span>
+                <h4 className="text-lg sm:text-xl font-extrabold text-slate-900 mt-1">
+                  Proposed Industrial Unit
+                </h4>
+                <p className="mt-3 text-xs text-slate-600 leading-relaxed">
                   {companyInfo.projectProposal.conclusion}
                 </p>
               </div>
 
-              <div className="mt-6 pt-6 border-t border-slate-800 text-xs text-slate-400">
-                <p><strong className="text-white">Proposed Industry:</strong> Pre-Fabricated & Engineered Building Structural Industry</p>
-                <p className="mt-1"><strong className="text-white">Proposed State:</strong> Andhra Pradesh</p>
+              <div className="mt-6 pt-6 border-t border-slate-200 text-xs text-slate-600">
+                <p>
+                  <strong className="text-slate-900">Proposed Industry:</strong>{" "}
+                  Pre-Fabricated & Engineered Building Structural Industry
+                </p>
+                <p className="mt-1">
+                  <strong className="text-slate-900">Proposed State:</strong> Andhra
+                  Pradesh
+                </p>
               </div>
             </div>
           </div>
@@ -189,9 +384,9 @@ export default function About() {
       </section>
 
       {/* 4. Details of Plant Machinery & Construction Equipment */}
-      <section className="py-20 bg-slate-50 border-b border-slate-200">
+      <section className="py-12 sm:py-16 lg:py-20 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
             <SectionHeading
               eyebrow="Equipment Fleet"
               title="Details of Plant Machinery, Furniture & Equipment"
@@ -205,36 +400,56 @@ export default function About() {
                 placeholder="Search equipment..."
                 value={equipmentFilter}
                 onChange={(e) => setEquipmentFilter(e.target.value)}
-                className="px-4 py-2 text-xs border border-slate-300 rounded-xs focus:outline-none focus:border-orange-600 bg-white"
+                className="w-full sm:w-auto px-4 py-2 text-xs border border-slate-300 rounded-xs focus:outline-none focus:border-orange-600 bg-white"
               />
             </div>
           </div>
 
           <div className="border border-slate-200 rounded-xs overflow-hidden bg-white shadow-xs">
             <div className="max-h-[500px] overflow-y-auto">
-              <table className="w-full text-xs text-left">
-                <thead className="sticky top-0 bg-slate-900 text-white z-10">
+              <table className="w-full text-xs text-left min-w-[360px]">
+                <thead className="sticky top-0 bg-slate-100 text-slate-900 border-b border-slate-200 z-10">
                   <tr>
-                    <th className="px-4 py-3 font-mono uppercase tracking-wider">#</th>
-                    <th className="px-4 py-3 font-mono uppercase tracking-wider">Class</th>
-                    <th className="px-4 py-3 font-mono uppercase tracking-wider">Asset Description</th>
-                    <th className="px-4 py-3 font-mono uppercase tracking-wider text-right">Qty / Set</th>
+                    <th className="px-3 sm:px-4 py-3 font-mono uppercase tracking-wider">
+                      #
+                    </th>
+                    <th className="px-3 sm:px-4 py-3 font-mono uppercase tracking-wider">
+                      Class
+                    </th>
+                    <th className="px-3 sm:px-4 py-3 font-mono uppercase tracking-wider">
+                      Asset Description
+                    </th>
+                    <th className="px-3 sm:px-4 py-3 font-mono uppercase tracking-wider text-right">
+                      Qty / Set
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-200">
                   {filteredEquipment.map((eq, i) => (
-                    <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-slate-50"}>
-                      <td className="px-4 py-2.5 font-mono text-slate-400">{i + 1}</td>
-                      <td className="px-4 py-2.5 font-semibold text-slate-500">{eq.class}</td>
-                      <td className="px-4 py-2.5 font-medium text-slate-900">{eq.name}</td>
-                      <td className="px-4 py-2.5 font-mono text-right font-bold text-orange-600">{eq.qty}</td>
+                    <tr
+                      key={i}
+                      className={i % 2 === 0 ? "bg-white" : "bg-slate-50"}
+                    >
+                      <td className="px-3 sm:px-4 py-2.5 font-mono text-slate-400">
+                        {i + 1}
+                      </td>
+                      <td className="px-3 sm:px-4 py-2.5 font-semibold text-slate-500">
+                        {eq.class}
+                      </td>
+                      <td className="px-3 sm:px-4 py-2.5 font-medium text-slate-900">
+                        {eq.name}
+                      </td>
+                      <td className="px-3 sm:px-4 py-2.5 font-mono text-right font-bold text-orange-600">
+                        {eq.qty}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
             <div className="p-3 bg-slate-100 border-t border-slate-200 text-xs text-slate-500 text-right">
-              Total {companyInfo.equipmentList.length} Heavy Construction Equipment Assets Documented
+              Total {companyInfo.equipmentList.length} Heavy Construction
+              Equipment Assets Documented
             </div>
           </div>
         </div>

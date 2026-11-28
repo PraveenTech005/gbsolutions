@@ -3,19 +3,19 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export default function ServiceCard({ service }) {
   return (
-    <article className="group bg-white border border-slate-200 hover:border-slate-400 transition-all duration-300 flex flex-col h-full rounded-sm overflow-hidden">
+    <article className="group bg-white border border-slate-200 hover:border-orange-500/50 transition-all duration-300 flex flex-col h-full rounded-sm overflow-hidden shadow-xs hover:shadow-md">
       {/* Image container */}
-      <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
+      <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
         <img
           src={service.image}
           alt={service.title}
           className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 filter brightness-95 group-hover:brightness-100"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-300"></div>
 
         {/* Category tag */}
-        <div className="absolute top-3 left-3 bg-slate-900/90 backdrop-blur-xs text-orange-400 border border-slate-700/60 text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-xs">
+        <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs text-orange-600 border border-slate-200 text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-xs shadow-xs">
           {service.category}
         </div>
       </div>

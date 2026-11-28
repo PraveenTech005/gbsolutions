@@ -79,7 +79,7 @@ export default function ServiceDetail() {
               </div>
 
               {/* Service Hero Image */}
-              <div className="mt-8 border border-slate-200 bg-slate-900 rounded-xs overflow-hidden">
+              <div className="mt-8 border border-slate-200 bg-slate-100 rounded-xs overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.title}
@@ -114,9 +114,9 @@ export default function ServiceDetail() {
 
                   <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {service.technicalHighlights.map((tech, idx) => (
-                      <div key={idx} className="p-4 bg-slate-900 text-white border border-slate-800 rounded-xs">
-                        <div className="text-xs font-mono text-orange-400 uppercase font-semibold">{tech.label}</div>
-                        <div className="text-sm sm:text-base font-bold text-slate-100 mt-1">{tech.value}</div>
+                      <div key={idx} className="p-4 bg-white text-slate-900 border border-slate-200 shadow-xs rounded-xs">
+                        <div className="text-xs font-mono text-orange-600 uppercase font-semibold">{tech.label}</div>
+                        <div className="text-sm sm:text-base font-bold text-slate-900 mt-1">{tech.value}</div>
                       </div>
                     ))}
                   </div>
@@ -144,17 +144,17 @@ export default function ServiceDetail() {
             {/* Right Sidebar (4 cols) */}
             <div className="lg:col-span-4 space-y-8">
               {/* Quick Inquiry Box */}
-              <div className="p-6 bg-slate-900 text-white rounded-xs border border-slate-800">
-                <div className="text-xs font-mono font-bold text-orange-400 uppercase tracking-wider">Direct Engineering Consultation</div>
-                <h4 className="text-lg font-bold text-white mt-1">Discuss This Capability</h4>
-                <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+              <div className="p-6 bg-white text-slate-900 rounded-xs border border-slate-200 shadow-xs">
+                <div className="text-xs font-mono font-bold text-orange-600 uppercase tracking-wider">Direct Engineering Consultation</div>
+                <h4 className="text-lg font-bold text-slate-900 mt-1">Discuss This Capability</h4>
+                <p className="text-xs text-slate-600 mt-2 leading-relaxed">
                   Have questions about clear spans, column reactions, or civil foundation packages for this service? Speak with our team.
                 </p>
 
                 <div className="mt-6 space-y-3">
                   <Link
                     to="/contact"
-                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs uppercase tracking-wider rounded-xs transition-colors"
+                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs uppercase tracking-wider rounded-xs transition-colors shadow-xs"
                   >
                     <span>Request Proposal</span>
                     <ArrowRight className="w-4 h-4" />
@@ -162,14 +162,14 @@ export default function ServiceDetail() {
 
                   <a
                     href={`tel:${companyInfo.contact.phoneRaw}`}
-                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold text-xs tracking-wider rounded-xs transition-colors"
+                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-semibold text-xs tracking-wider rounded-xs transition-colors shadow-xs"
                   >
                     <span>Call +91 95055 52025</span>
                   </a>
                 </div>
 
-                <div className="mt-4 pt-4 border-t border-slate-800 text-[11px] text-slate-400 flex items-center gap-2">
-                  <FileCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                <div className="mt-4 pt-4 border-t border-slate-200 text-[11px] text-slate-500 flex items-center gap-2">
+                  <FileCheck className="w-4 h-4 text-emerald-600 shrink-0" />
                   <span>Prompt review of structural drawings & site requirements</span>
                 </div>
               </div>

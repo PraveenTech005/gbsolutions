@@ -68,35 +68,35 @@ export default function Home() {
       />
 
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[85vh] lg:min-h-[90vh] bg-slate-950 text-white flex items-center justify-center overflow-hidden border-b border-slate-800">
+      <section className="relative min-h-[85vh] lg:min-h-[90vh] bg-white text-slate-900 flex items-center justify-center overflow-hidden border-b border-slate-200">
         <div className="absolute inset-0 z-0">
           <img
             src="/images/og/shed_pre_build.png"
             alt="Pre-Engineered Building Structural Steel Frame"
-            className="w-full h-full object-cover object-center filter brightness-40 contrast-125"
+            className="w-full h-full object-cover object-center opacity-15 filter contrast-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-slate-950/40"></div>
-          <div className="absolute inset-0 bg-grid-pattern opacity-15"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/85 to-white/50"></div>
+          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 text-left w-full">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 mb-6 px-3.5 py-1.5 bg-orange-600/20 border border-orange-500/40 text-orange-400 text-xs font-bold tracking-widest uppercase rounded-xs">
-              <span className="w-2 h-2 rounded-full bg-orange-500 animate-ping"></span>
+            <div className="inline-flex items-center gap-2 mb-6 px-3.5 py-1.5 bg-orange-50 border border-orange-200 text-orange-600 text-xs font-bold tracking-widest uppercase rounded-xs">
+              <span className="w-2 h-2 rounded-full bg-orange-600 animate-ping"></span>
               <span>
                 G.B SOLUTIONS PEB • Industrial Shed and Civil Contractors • Est.
                 2017
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] uppercase font-sans">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1] uppercase font-sans">
               ENGINEERING THE FUTURE OF{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-orange-400">
+              <span className="text-orange-600">
                 INDUSTRIAL SPACES.
               </span>
             </h1>
 
-            <p className="mt-6 text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl font-normal leading-relaxed">
+            <p className="mt-6 text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl font-normal leading-relaxed">
               Delivering pre-engineered building solutions, structural steel
               systems and civil construction services with a focus on quality,
               precision and reliability.
@@ -113,25 +113,25 @@ export default function Home() {
 
               <Link
                 to="/about"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700 font-bold text-xs uppercase tracking-wider rounded-xs transition-colors duration-200 text-center"
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-white hover:bg-slate-50 text-slate-900 border border-slate-300 font-bold text-xs uppercase tracking-wider rounded-xs transition-colors duration-200 text-center shadow-xs"
               >
                 <span>About Our Company</span>
-                <ArrowRight className="w-4 h-4 text-orange-400" />
+                <ArrowRight className="w-4 h-4 text-orange-600" />
               </Link>
             </div>
           </div>
 
           {/* Market Stats Bar */}
-          <div className="mt-16 pt-8 border-t border-slate-800/80 grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="mt-16 pt-8 border-t border-slate-200 grid grid-cols-2 md:grid-cols-4 gap-6">
             {companyInfo.marketOverview.stats.map((stat, idx) => (
               <div key={idx} className="border-l-2 border-orange-500 pl-3">
-                <div className="text-xl sm:text-2xl font-extrabold text-white font-sans">
+                <div className="text-xl sm:text-2xl font-extrabold text-slate-900 font-sans">
                   {stat.value}
                 </div>
-                <div className="text-xs text-orange-400 font-semibold mt-0.5">
+                <div className="text-xs text-orange-600 font-semibold mt-0.5">
                   {stat.cagr}
                 </div>
-                <div className="text-[11px] text-slate-400 mt-0.5">
+                <div className="text-[11px] text-slate-500 mt-0.5">
                   {stat.label}
                 </div>
               </div>
@@ -139,9 +139,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center text-slate-500 text-[10px] uppercase tracking-widest">
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center text-slate-400 text-[10px] uppercase tracking-widest">
           <span className="mb-1">Scroll</span>
-          <ChevronDown className="w-4 h-4 animate-bounce text-orange-500" />
+          <ChevronDown className="w-4 h-4 animate-bounce text-orange-600" />
         </div>
       </section>
 
@@ -150,13 +150,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-6 relative">
-              <div className="relative border border-slate-200 bg-slate-900 overflow-hidden rounded-xs shadow-md">
+              <div className="relative border border-slate-200 bg-slate-100 overflow-hidden rounded-xs shadow-md">
                 <img
                   src="/images/og/shed_inner1.png"
                   alt="Pre-Engineered Building Structure"
                   className="w-full aspect-[4/3] object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
                 <div className="absolute bottom-0 inset-x-0 p-5 text-white z-10">
                   <p className="text-xs font-mono uppercase text-orange-400 font-bold tracking-wider">
                     G.B SOLUTIONS PEB
@@ -167,15 +167,15 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* 15+ Years Promoter Experience Badge - Positioned at top corner to prevent overlapping the bottom caption */}
-              <div className="absolute -top-6 -left-3 sm:-top-8 sm:left-6 bg-slate-900/95 backdrop-blur-xs text-white p-5 rounded-xs border border-slate-700 shadow-xl max-w-[260px] z-20">
-                <div className="text-2xl font-black text-orange-500 font-sans">
+              {/* 15+ Years Promoter Experience Badge - White theme with navy text & orange accent */}
+              <div className="absolute -top-6 -left-3 sm:-top-8 sm:left-6 bg-white text-slate-900 p-5 rounded-xs border-2 border-orange-500/50 shadow-xl max-w-[260px] z-20">
+                <div className="text-2xl font-black text-orange-600 font-sans">
                   15+ Years
                 </div>
-                <div className="text-xs font-semibold text-slate-200 uppercase tracking-wider mt-1">
+                <div className="text-xs font-bold text-slate-900 uppercase tracking-wider mt-1">
                   Promoter Industry Leadership
                 </div>
-                <div className="text-[11px] text-slate-400 mt-1 leading-snug">
+                <div className="text-[11px] text-slate-600 mt-1 leading-snug">
                   Mr G Satish: Over 15 years in pre-fabricated & engineered
                   building structural products.
                 </div>
@@ -435,32 +435,31 @@ export default function Home() {
       </section>
 
       {/* 5. 10 DOCUMENTED ADVANTAGES OF PEB */}
-      <section className="py-20 bg-slate-900 text-white border-b border-slate-800">
+      <section className="py-20 bg-white text-slate-900 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Documented Industry Benefits"
             title="Advantages of Pre-Fabricated & Engineered Building Structural Industry"
             description="The 10 key technical and economic advantages of pre-engineered building systems over conventional construction."
             centered={true}
-            dark={true}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mt-12">
             {companyInfo.advantages.map((adv) => (
               <div
                 key={adv.id}
-                className="bg-slate-950/80 border border-slate-800 p-5 rounded-xs flex flex-col justify-between hover:border-orange-500/50 transition-colors"
+                className="bg-white border border-slate-200 p-5 rounded-xs flex flex-col justify-between hover:border-orange-500/50 hover:shadow-md transition-all"
               >
                 <div>
                   <div className="flex">
                     <span className="text-3xl font-mono font-bold text-orange-600">
                       &#8226;
                     </span>
-                    <h4 className="text-sm font-bold text-white mt-1.5">
+                    <h4 className="text-sm font-bold text-slate-900 mt-1.5">
                       {adv.title}
                     </h4>
                   </div>
-                  <p className="mt-2 text-xs text-slate-400 leading-relaxed">
+                  <p className="mt-2 text-xs text-slate-600 leading-relaxed">
                     {adv.description}
                   </p>
                 </div>
@@ -485,20 +484,20 @@ export default function Home() {
               <div
                 key={idx}
                 onClick={() => handleOpenLightbox(idx)}
-                className="group relative aspect-[4/3] bg-slate-900 border border-slate-200 rounded-xs overflow-hidden cursor-pointer shadow-xs"
+                className="group relative aspect-[4/3] bg-slate-100 border border-slate-200 rounded-xs overflow-hidden cursor-pointer shadow-xs"
               >
                 <img
                   src={img.src}
                   alt={img.title}
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
 
                 <div className="absolute bottom-3 left-3 right-3 text-white">
                   <p className="text-xs font-bold leading-snug">{img.title}</p>
                 </div>
 
-                <div className="absolute top-3 right-3 p-2 rounded-xs bg-slate-900/80 hover:bg-orange-600 text-white transition-colors opacity-0 group-hover:opacity-100">
+                <div className="absolute top-3 right-3 p-2 rounded-xs bg-white/90 hover:bg-orange-600 text-slate-900 hover:text-white transition-colors opacity-0 group-hover:opacity-100 shadow-sm">
                   <Maximize2 className="w-3.5 h-3.5" />
                 </div>
               </div>

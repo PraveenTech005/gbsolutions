@@ -38,13 +38,13 @@ export default function ImageLightbox({
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/95 backdrop-blur-sm transition-opacity duration-300"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm transition-opacity duration-300"
       onClick={onClose}
     >
       {/* Close button */}
       <button
         onClick={onClose}
-        className="absolute top-5 right-5 z-50 p-2.5 rounded-full bg-slate-800/80 hover:bg-orange-600 text-white transition-colors duration-200"
+        className="absolute top-5 right-5 z-50 p-2.5 rounded-full bg-black/60 hover:bg-orange-600 text-white transition-colors duration-200"
         aria-label="Close Lightbox"
       >
         <X className="w-6 h-6" />
@@ -57,7 +57,7 @@ export default function ImageLightbox({
             e.stopPropagation();
             onNavigate((currentIndex - 1 + images.length) % images.length);
           }}
-          className="absolute left-4 sm:left-8 z-50 p-3 rounded-full bg-slate-800/80 hover:bg-orange-600 text-white transition-colors duration-200"
+          className="absolute left-4 sm:left-8 z-50 p-3 rounded-full bg-black/60 hover:bg-orange-600 text-white transition-colors duration-200"
           aria-label="Previous Image"
         >
           <ChevronLeft className="w-6 h-6" />
@@ -71,7 +71,7 @@ export default function ImageLightbox({
             e.stopPropagation();
             onNavigate((currentIndex + 1) % images.length);
           }}
-          className="absolute right-4 sm:right-8 z-50 p-3 rounded-full bg-slate-800/80 hover:bg-orange-600 text-white transition-colors duration-200"
+          className="absolute right-4 sm:right-8 z-50 p-3 rounded-full bg-black/60 hover:bg-orange-600 text-white transition-colors duration-200"
           aria-label="Next Image"
         >
           <ChevronRight className="w-6 h-6" />

@@ -5,6 +5,14 @@ export const companyInfo = {
   constitution: "Proprietorship",
   dateOfIncorporation: "01-07-2017",
   established: 2017,
+  owner: {
+    name: "Gattigundla Satish",
+    role: "Founder and CEO",
+    phone: "9505552033",
+    message:
+      "At GB Solutions, we believe every great structure begins with a strong foundation. Our commitment is to deliver high-quality civil construction works with precision, safety, and excellence. We strive to build durable infrastructure that stands strong for generations.",
+    quote: "Building Strong Foundations. Creating Lasting Excellence.",
+  },
   promoter: {
     name: "Mr G Satish",
     role: "Promoter & Principal Director",
@@ -15,20 +23,20 @@ export const companyInfo = {
   },
   contact: {
     address: {
-      line1: "Below TSIIC Complex, Road No. 1",
-      area: "IDA Nacharam",
+      line1: "Survey No 327 & 328, Sukanya Farma",
+      area: "Narkoda Village, Shamshabad",
       city: "Hyderabad",
-      pincode: "500076",
+      pincode: "501218",
       state: "Telangana",
       country: "India",
-      full: "Below TSIIC Complex, Road No. 1, IDA Nacharam, Hyderabad - 500076, Telangana",
+      full: "Survey No 327 & 328, Sukanya Farma, Narkoda Village, Shamshabad, Hyderabad - 501218",
     },
     phone: "+91 95055 52025",
     phoneRaw: "+919505552025",
     email: "gbsolutions4@gmail.com",
     whatsappUrl:
-      "https://wa.me/919505552025?text=Hello%20G.B%20SOLUTION%20PEB,%20I%20would%20like%20to%20discuss%20an%20industrial%20construction%20project.",
-    workingHours: "Monday – Saturday: 9:00 AM – 6:30 PM IST",
+      "https://wa.me/919505552033?text=Hello%20G.B%20SOLUTION%20PEB,%20I%20would%20like%20to%20discuss%20an%20industrial%20construction%20project.",
+    workingHours: "Monday - Saturday: 9:00 AM - 6:30 PM IST",
   },
   headlines: {
     main: "ENGINEERING THE FUTURE OF INDUSTRIAL SPACES.",

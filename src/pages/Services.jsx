@@ -61,8 +61,8 @@ export default function Services() {
                   onClick={() => setSelectedCategory(cat.key)}
                   className={`px-3 py-1.5 text-xs font-semibold rounded-xs transition-colors whitespace-nowrap ${
                     selectedCategory === cat.key
-                      ? "bg-slate-900 text-white border border-slate-900"
-                      : "bg-slate-100 text-slate-600 hover:bg-slate-200 border border-transparent"
+                      ? "bg-orange-600 text-white border border-orange-600 font-bold shadow-xs"
+                      : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
                   }`}
                 >
                   {cat.label}
